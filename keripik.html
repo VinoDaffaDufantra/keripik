@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FamChips - Cemilan Sehat</title>
+    <nav class="navbar">
+    <div class="container">
+        <a href="#" class="logo">FAMCHIPS</a>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#" class="active">Our Product</a></li>
+            <li><a href="#">Product Gallery</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Testimonial</a></li>
+        </ul>
+        <a href="#" class="cta-button">Pesan Sekarang</a>
+    </div>
+</nav>
+    <style>
+ .navbar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+        padding: 20px 0;
+    }
+
+    .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .navbar .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: white;
+        text-decoration: none;
+    }
+
+    .navbar .nav-links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 25px;
+    }
+
+    .navbar .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1rem;
+        padding: 5px 0;
+        position: relative;
+    }
+
+    .navbar .nav-links .active {
+        background-color: #9370DB; /* Ungu */
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    .navbar .cta-button {
+        background-color: #A9D163;
+        color: white;
+        padding: 10px 25px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .navbar .cta-button:hover {
+        background-color: #92b855;
+    }
+
+        :root {
+            --primary-color: #6a994e;
+            --text-color: #fff;
+            --background-gradient: rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5);
+            --button-hover-color: #5c8b44;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f0f2f5;
+            color: var(--text-color);
+        }
+
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(var(--background-gradient));
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 800px;
+            padding: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            font-weight: 400;
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 28px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-color);
+            background-color: var(--primary-color);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--button-hover-color);
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                text-align: center;
+                padding: 15px;
+            }
+
+            .hero-content h1 {
+                font-size: clamp(2rem, 6vw, 3rem);
+            }
+
+            .hero-content p {
+                font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero-section">
+        <img src="C0097T01 1.png" alt="FamChips healthy snacks" class="hero-image">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Nikmati Lezatnya Camilan Sehat dan Bergizi</h1>
+            <p>Selamat datang di FamChips – Keripik buah dan sayuran yang 100% alami, renyah, dan bergizi. Pilihan tepat untuk camilan sehat anda</p>
+            <a href="#" class="cta-button">Pesan Sekarang</a>
+        </div>
+    </section>
+
+</body>
+</html>

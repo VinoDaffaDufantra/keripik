@@ -4,97 +4,118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FamChips - Cemilan Sehat</title>
-    <nav class="navbar">
-    <div class="container">
-        <a href="#" class="logo">FAMCHIPS</a>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#" class="active">Our Product</a></li>
-            <li><a href="#">Product Gallery</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Testimonial</a></li>
-        </ul>
-        <a href="#" class="cta-button">Pesan Sekarang</a>
-    </div>
-</nav>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
- .navbar {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 10;
-        padding: 20px 0;
-    }
-
-    .navbar .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-
-    .navbar .logo {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: white;
-        text-decoration: none;
-    }
-
-    .navbar .nav-links {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        gap: 25px;
-    }
-
-    .navbar .nav-links a {
-        color: white;
-        text-decoration: none;
-        font-weight: 500;
-        font-size: 1rem;
-        padding: 5px 0;
-        position: relative;
-    }
-
-    .navbar .nav-links .active {
-        background-color: #9370DB; /* Ungu */
-        padding: 5px 10px;
-        border-radius: 5px;
-    }
-
-    .navbar .cta-button {
-        background-color: #A9D163;
-        color: white;
-        padding: 10px 25px;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: 600;
-    }
-
-    .navbar .cta-button:hover {
-        background-color: #92b855;
-    }
-
+        /* Variabel CSS */
         :root {
             --primary-color: #6a994e;
             --text-color: #fff;
             --background-gradient: rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5);
             --button-hover-color: #5c8b44;
+            --cta-color: #A9D163; /* Hijau CTA */
+            --active-link-color: #9370DB; /* Ungu Aktif */
+        }
+
+        /* Reset dan Dasar */
+        * {
+            box-sizing: border-box;
         }
 
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
             background-color: #f0f2f5;
-            color: var(--text-color);
+            color: #333; /* Mengubah warna default teks untuk body */
         }
 
+        /* Navigasi Bar */
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            padding: 20px 0;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        .navbar .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 25px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .navbar .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .navbar .nav-links .active {
+            background-color: var(--active-link-color);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        /* Tombol CTA di Navbar */
+        .navbar .cta-button {
+            background-color: var(--cta-color);
+            color: var(--text-color);
+            padding: 10px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            white-space: nowrap; /* Mencegah tombol putus baris */
+        }
+
+        .navbar .cta-button:hover {
+            background-color: #92b855;
+        }
+        
+        /* Tombol Hamburger */
+        .menu-toggle {
+            display: none; /* Sembunyikan di desktop */
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            cursor: pointer;
+            z-index: 20;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: var(--text-color);
+            border-radius: 3px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Hero Section */
         .hero-section {
             position: relative;
             width: 100%;
@@ -132,6 +153,7 @@
             z-index: 3;
             max-width: 800px;
             padding: 20px;
+            color: var(--text-color); /* Pastikan teks konten hero putih */
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
@@ -149,13 +171,14 @@
             margin-bottom: 30px;
         }
 
-        .cta-button {
+        /* Tombol CTA di Hero */
+        .hero-content .cta-button {
             display: inline-block;
             padding: 12px 28px;
             font-size: 1rem;
             font-weight: 600;
             color: var(--text-color);
-            background-color: var(--primary-color);
+            background-color: var(--primary-color); /* Warna hijau yang berbeda dari navbar */
             border: none;
             border-radius: 50px;
             cursor: pointer;
@@ -163,11 +186,74 @@
             transition: background-color 0.3s ease;
         }
 
-        .cta-button:hover {
+        .hero-content .cta-button:hover {
             background-color: var(--button-hover-color);
         }
-
+        
+        /* ======================================================= */
+        /* MEDIA QUERIES UNTUK RESPONSIVITAS MOBILE (<= 768px) */
+        /* ======================================================= */
         @media (max-width: 768px) {
+            
+            /* Sembunyikan tautan navigasi dan tombol CTA navbar di mobile secara default */
+            .navbar .nav-links {
+                position: absolute;
+                top: 0; /* Akan diisi oleh JS/manual jika menggunakan checkbox hack */
+                right: 0;
+                width: 70%;
+                height: 100vh;
+                flex-direction: column;
+                background-color: rgba(0, 0, 0, 0.9);
+                padding: 100px 30px 20px;
+                text-align: left;
+                transform: translateX(100%); /* Sembunyikan ke kanan */
+                gap: 20px;
+                z-index: 15;
+            }
+
+            /* Saat menu dibuka (menggunakan class 'open') */
+            .navbar .nav-links.open {
+                transform: translateX(0); /* Tampilkan */
+            }
+
+            .navbar .nav-links a {
+                display: block;
+                font-size: 1.2rem;
+                padding: 10px 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .navbar .nav-links .active {
+                background-color: transparent;
+                padding: 5px 0;
+                border-radius: 0;
+                color: var(--active-link-color);
+            }
+            
+            /* Sembunyikan tombol CTA utama di navbar pada mobile, hanya tampilkan di menu/hero */
+            .navbar .cta-button {
+                display: none; 
+            }
+
+            /* Tampilkan Hamburger Menu */
+            .menu-toggle {
+                display: flex; 
+            }
+
+            /* Animasi Hamburger ke X (opsional) */
+            .menu-toggle.open span:nth-child(1) {
+                transform: translateY(9px) rotate(45deg);
+            }
+
+            .menu-toggle.open span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle.open span:nth-child(3) {
+                transform: translateY(-9px) rotate(-45deg);
+            }
+            
+            /* Penyesuaian Hero Content untuk Mobile */
             .hero-content {
                 text-align: center;
                 padding: 15px;
@@ -181,12 +267,43 @@
                 font-size: clamp(0.9rem, 2.5vw, 1.1rem);
             }
         }
+        
+        /* Tambahan: Responsif untuk tablet (768px - 1024px) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .navbar .container {
+                padding: 0 40px;
+            }
+            
+            .hero-content {
+                max-width: 600px;
+                padding: 40px;
+            }
+        }
     </style>
 </head>
 <body>
 
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">FAMCHIPS</a>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#" class="active">Our Product</a></li>
+                <li><a href="#">Product Gallery</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Testimonial</a></li>
+            </ul>
+            <a href="#" class="cta-button">Pesan Sekarang</a>
+            
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
     <section class="hero-section">
-        <img src="C0097T01 1.png" alt="FamChips healthy snacks" class="hero-image">
+        <img src="./C0097T01 1.png" alt="FamChips healthy snacks" class="hero-image">
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1>Nikmati Lezatnya Camilan Sehat dan Bergizi</h1>
@@ -194,6 +311,16 @@
             <a href="#" class="cta-button">Pesan Sekarang</a>
         </div>
     </section>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+            menuToggle.classList.toggle('open');
+        });
+    </script>
 
 </body>
 </html>

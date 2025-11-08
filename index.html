@@ -197,18 +197,19 @@
             
             /* Sembunyikan tautan navigasi dan tombol CTA navbar di mobile secara default */
             .navbar .nav-links {
-                position: absolute;
-                top: 0; /* Akan diisi oleh JS/manual jika menggunakan checkbox hack */
+                position: fixed; /* Menggunakan fixed agar tidak terpengaruh scroll */
+                top: 0; 
                 right: 0;
                 width: 70%;
                 height: 100vh;
                 flex-direction: column;
-                background-color: rgba(0, 0, 0, 0.9);
+                background-color: rgba(0, 0, 0, 0.95); /* Sedikit lebih gelap */
                 padding: 100px 30px 20px;
                 text-align: left;
                 transform: translateX(100%); /* Sembunyikan ke kanan */
                 gap: 20px;
                 z-index: 15;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
             }
 
             /* Saat menu dibuka (menggunakan class 'open') */
@@ -319,6 +320,8 @@
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('open');
             menuToggle.classList.toggle('open');
+            // Opsional: mencegah scrolling di body saat menu terbuka
+            document.body.classList.toggle('no-scroll');
         });
     </script>
 
